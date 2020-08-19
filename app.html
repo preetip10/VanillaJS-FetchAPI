@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fetch API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form id="fetch-form">
+            <input type="text" name="name" id="name">
+            <input type="submit" id="submit" value="Submit">
+        </form>
+        
+        <script>
+            document.querySelector('#submit').addEventListener('click', (e) => {
+                e.preventDefault();
+                fetch('abc.txt').then((res) => {
+                    return res.text();
+                }).then((data) => {
+                    console.log(data);
+                }).catch((err) => console.log(err));;
+            });
+        </script>
+    </body>
+</html>
